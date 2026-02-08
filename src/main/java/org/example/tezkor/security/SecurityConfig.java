@@ -65,6 +65,9 @@ public class SecurityConfig {
                                 "localhost:3001/**"
                         ).permitAll()
 
+                        .requestMatchers("/bot/**").permitAll()
+
+
                         // 🔐 ROLE BASED endpoints
                         .requestMatchers("/owner/**").hasRole("OWNER")
                         .requestMatchers("/admin/**").hasRole("ADMIN")
